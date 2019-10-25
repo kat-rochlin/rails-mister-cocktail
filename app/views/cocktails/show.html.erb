@@ -1,0 +1,17 @@
+<h1>Cocktails#show</h1>
+
+<h2 class = "show-headline"><%= @cocktail.name %></h2>
+
+<h3>Doses</h3>
+<div class = "row">
+<% @doses.each do |dose| %>
+      <div class = "col-sm-4 d-flex justify-content-center custom-dose" >
+   <p><%= dose.ingredient.name %> | <%= dose.description %></p>
+   <%= link_to "Delete", dose_path(dose, cocktail_id: @cocktail), method: :delete %>
+ </div>
+<% end %>
+</div>
+
+<%= render 'doses/form' %>
+
+<%= link_to 'Back', cocktails_path %>

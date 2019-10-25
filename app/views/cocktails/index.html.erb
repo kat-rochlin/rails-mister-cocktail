@@ -1,0 +1,27 @@
+<%= render "navbar" %>
+
+
+<div class="banner text-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/le-wagon1234/image/upload/v1571973706/cocktails/cocktails-promo_jvcoyp.jpg);">
+  <div class="container">
+    <h1> <strong>WELCOME TO COCKTAIL CITY</strong>!</h1>
+    <p>Let's get buzzed</p>
+  <%= link_to 'New Cocktail', new_cocktail_path, class: "btn btn-primary" %>
+  </div>
+</div>
+
+
+<div class = "container text-center home-container">
+<h2>COCKTAIL LIST</h2>
+<div class = "row">
+ <% @cocktails.each do |cocktail| %>
+      <div class="col-sm-4 justify-content-center">
+        <div class="card" style="background-image: url(https://res.cloudinary.com/le-wagon1234/image/upload/v1571975219/cocktails/UnionSquare-182884660-56a171b03df78cf7726ab2f4_ishym6.jpg)">
+        <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
+         </div>
+      </div>
+    <% end %>
+    </div>
+</div>
+</div>
+
+
